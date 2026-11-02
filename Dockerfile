@@ -11,7 +11,8 @@ COPY frontend/package.json ./frontend/
 COPY backend/prisma ./backend/prisma
 
 # Instala dependências e gera o Prisma Client
-RUN npm --prefix backend install && \
+RUN npm install && \
+    npm --prefix backend install && \
     (cd backend && npx prisma generate --schema=prisma/schema.prisma) && \
     npm --prefix frontend install
 

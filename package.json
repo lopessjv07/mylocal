@@ -11,5 +11,8 @@
     "db:down": "docker compose down",
     "dev:backend": "npm --prefix backend run start:dev",
     "dev:frontend": "npm --prefix frontend run dev"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9"
   }
 }

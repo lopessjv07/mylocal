@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { spawn } = require('child_process');
 const path = require('path');
 
@@ -15,7 +16,7 @@ function syncDatabase() {
       return resolve();
     }
     console.log('[DB] Sincronizando schema do Prisma com o banco de dados...');
-    const prismaProcess = spawn('npx', ['prisma', 'db', 'push', '--accept-data-loss'], {
+    const prismaProcess = spawn('npx', ['prisma', 'db', 'push', '--schema=prisma/schema.prisma', '--accept-data-loss'], {
       cwd: backendDir,
       env: { ...process.env },
       stdio: 'inherit',
