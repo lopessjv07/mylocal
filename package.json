@@ -4,7 +4,7 @@
   "private": true,
   "description": "Nuvem própria de arquivos e documentos (Next.js + NestJS + Prisma + MariaDB)",
   "scripts": {
-    "postinstall": "npm --prefix backend install && npx --prefix backend prisma generate && npm --prefix frontend install",
+    "postinstall": "npm --prefix backend install && (cd backend && npx prisma generate --schema=prisma/schema.prisma) && npm --prefix frontend install",
     "build": "npm --prefix backend run build && npm --prefix frontend run build",
     "start": "node start.js",
     "db:up": "docker compose up -d",
