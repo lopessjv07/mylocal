@@ -7,3 +7,4 @@ storage/uploads/*
 *.log
 .env
 .env.local
+
