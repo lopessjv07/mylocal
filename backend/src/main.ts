@@ -17,7 +17,7 @@ async function bootstrap() {
     exposedHeaders: ['Content-Disposition'],
   });
 
-  const port = Number(process.env.PORT || 4000);
+  const port = Number(process.env.BACKEND_PORT || 4000);
   await app.listen(port);
   logger.log(`MyLibrary Cloud Backend rodando em http://localhost:${port}`);
 }
