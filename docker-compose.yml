@@ -1,0 +1,22 @@
+services:
+  mariadb:
+    image: mariadb:11.4
+    container_name: mylibrary-mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: mylibrary_root_password
+      MARIADB_DATABASE: mylibrary_cloud
+      MARIADB_USER: mylibrary_user
+      MARIADB_PASSWORD: mylibrary_password
+    ports:
+      - "3309:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mariadb_data:

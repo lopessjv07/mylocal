@@ -1,0 +1,14 @@
+{
+  "name": "mylibrary-cloud-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nuvem própria de arquivos e documentos (Next.js + NestJS + Prisma + MariaDB)",
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "dev:backend": "npm --prefix backend run start:dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:backend": "npm --prefix backend run build",
+    "build:frontend": "npm --prefix frontend run build"
+  }
+}
